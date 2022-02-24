@@ -1,13 +1,13 @@
 package fcontext
 
-when ODIN_OS == "windows" {
+when ODIN_OS == .Windows {
     when ODIN_DEBUG == true {
         foreign import fcontext_lib "fcontextd.lib"
     }
     else {
         foreign import fcontext_lib "fcontext.lib"
     }
-} else when ODIN_OS == "darwin" {
+} else when ODIN_OS == .Darwin {
     foreign import fcontext_lib "fcontext.a"
 }
 
